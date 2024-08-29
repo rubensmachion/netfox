@@ -185,7 +185,7 @@ extension URLRequest {
         }
         
         if let body = String(data: getNFXBody(), encoding: .utf8) {
-            command.append("-d \u{22}\(body)\u{22}")
+            command.append("-d \u{27}\(body)\u{27}")
         }
         
         return command.joined(separator: " ")
