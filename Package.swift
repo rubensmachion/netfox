@@ -14,9 +14,14 @@ let package = Package(
         ),
     ],
     targets: [
-        .target(name: "netfox",
-                path: "netfox/",
-                exclude: ["OSX"])
+        .target(
+            name: "netfox",
+            path: "netfox/",
+            exclude: ["OSX"],
+            cSettings: [
+                .unsafeFlags(["-arch", "arm64"])
+            ]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )
